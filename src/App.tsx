@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import { AppProvider } from './context/AppContext';
 import Header from './components/Header';
-import Footer from './components/Footer';
+import PerformanceMetrics from './pages/PerformanceMetrics';
 
 const App: React.FC = () => {
   return (
@@ -19,13 +19,12 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/cat-details" element={<CatDetails />} />
+              <Route path="/perf" element={<PerformanceMetrics />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Router>
         </div>
 
-        <Footer/>
-        
       </div>
     </AppProvider>
     

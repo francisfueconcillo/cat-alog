@@ -1,13 +1,16 @@
-import React, { createContext, useState, useContext, ReactNode, ReactElement } from 'react';
+import React, { createContext, useState, useContext, ReactElement, useEffect } from 'react';
 import Cat from './types/Cat';
+import CatImage from './types/CatImage';
 import AppContextType from './types/AppContextType';
-
+import { fetchCatBreeds } from '../requests';
 
 const initialAppState: AppContextType = {
   allBreeds: [],
   setAllBreeds: () => {},
   selectedCat: null,
   setSelectedCat: () => {},
+  catImages: [],
+  setCatImages: () => {},
 };
 
 const AppContext = createContext<AppContextType>(initialAppState);
@@ -19,10 +22,11 @@ type Props = {
 const AppProvider = ({children}: Props) => {
   const [allBreeds, setAllBreeds] = useState<Cat[] | []>(initialAppState.allBreeds);
   const [selectedCat, setSelectedCat] = useState<Cat | null>(initialAppState.selectedCat);
+  const [catImages, setCatImages] = useState<CatImage[] | []>(initialAppState.catImages);
   
 
   return (
-    <AppContext.Provider value={{ allBreeds, setAllBreeds, selectedCat, setSelectedCat }}>
+    <AppContext.Provider value={{ allBreeds, setAllBreeds, selectedCat, setSelectedCat, catImages, setCatImages }}>
       {children}
     </AppContext.Provider>
   );
@@ -37,4 +41,4 @@ const useAppContext = (): AppContextType => {
   return context;
 };
 
-export { AppProvider, useAppContext };
+export { AppProvider, useAppContext, initialAppState };

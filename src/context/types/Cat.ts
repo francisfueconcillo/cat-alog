@@ -4,6 +4,8 @@ type Cat = {
   description: string,
   origin: string,
   temperament: string,
+  value: string,
+  label: string,
 };
 
 export default Cat;
