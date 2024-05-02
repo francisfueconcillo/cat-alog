@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+# Cat-alog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application provides information about different cat breeds, helping cat enthusiasts and potential pet owners to explore and learn more about various feline breeds. Whether you're curious about a specific breed's characteristics, temperament, or grooming needs, this app has got you covered!
 
-## Available Scripts
+## Features
+- Browse images of different breed of cats Breeds: Explore a wide range of cat breeds, each with its own page featuring detailed information.
+- Search Functionality: Quickly find specific cat breeds by partial text search
+- Responsive Design: Enjoy a seamless experience across various devices, including desktops, tablets, and mobile phones.
 
-In the project directory, you can run:
 
-### `npm start`
+## Tech Stack
+- This project was bootstrapped with [Create React App](https://facebook.github.io/create-react-app), using React w/ Typescript
+- TailwindCSS for styling and grid layout 
+- [@shacdn/ui](https://ui.shadcn.com) for re-usable UI components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Local Development Setup
+- Run `npm i`
+- Run `npm start`
+- Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### [@shacdn/ui](https://ui.shadcn.com) UI Components
+- Add UI components from [@shacdn/ui](https://ui.shadcn.com) by running `npx shadcn-ui@latest add <component name>` . See installation guide for each component in [@shacdn/ui documentation](https://ui.shadcn.com/docs)
+- Move the component *.tsx file to `src/components/ui` directory and fix any imports to point to this directory
 
-### `npm test`
+### AppConfig
+- The following parameters are configurable for the app in `src/appConfig.ts` file
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Variable | Required | Description | Default Value
+--- | --- | --- | ---
+CAT_API_KEY | No | The Cat API key. See [Authentication in https://docs.thecatapi.com/](https://docs.thecatapi.com/)  for more details | Empty string
+CAT_API_BASE_URL | Yes | The Cat API base URL | https://api.thecatapi.com/v1
+PAGE_LIMIT | Yes | The number of cat image to show per page load | 10
 
-### `npm run build`
+## Testing
+- Run `npm test`
+- Launches the test runner in the interactive watch mode.
+- See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment
+- Run `npm run build`
+- Builds the app for production to the `build` folder.
+- It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
+- Move this build package to your web server
+- See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.

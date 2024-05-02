@@ -8,22 +8,19 @@ import { AppProvider } from './context/AppContext';
 import Header from './components/Header';
 import PerformanceMetrics from './pages/PerformanceMetrics';
 
-const App: React.FC = () => {
+function App() {
   return (
     <AppProvider>
-      <div className="h-screen w-screen bg-gray-100 px-5">
-        <Header/>
-
-        <div className="p-4">
-          <Router>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/cat-details" element={<CatDetails />} />
-              <Route path="/perf" element={<PerformanceMetrics />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Router>
-        </div>
+      <div className="h-fit w-screen bg-gray-100 px-5">
+        <Router>
+          <Header/>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cat-details" element={<CatDetails />} />
+            <Route path="/perf" element={<PerformanceMetrics />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Router>
 
       </div>
     </AppProvider>

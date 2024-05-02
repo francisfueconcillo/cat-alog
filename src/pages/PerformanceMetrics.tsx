@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { ReportHandler, getCLS, getFID, getLCP, getFCP, getTTFB } from 'web-vitals';
 
-const PerformanceMetrics: React.FC = () => {
+function PerformanceMetrics() {
   useEffect(() => {
     const reportToAnalytics: ReportHandler = (metric) => {
       console.log('Metric:: ', metric.name, " -> ", metric.value);
