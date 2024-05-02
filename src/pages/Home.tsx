@@ -12,12 +12,14 @@ import ProgressBar from '../components/ProgressBar';
 import { searchImages, fetchCatBreeds } from '../requests';
 import AppConfig from '../appConfig';
 import RouteData from '../context/types/RouteData';
+import { useToast } from "../components/ui/use-toast";
 
 function Home() {
   const navigate = useNavigate();
   const [nextPageToLoad, setNextPageToLoad] = useState(1);
   const [showLoadButton, setShowLoadButton] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast()
 
   const { allBreeds, selectedCat, setSelectedCat, setCatImages, setAllBreeds, catImages } = useAppContext();
 
@@ -44,8 +46,11 @@ function Home() {
         
       })
       .catch(error => {
-        // Handle the error
-        console.error(error);
+        toast({
+          variant: "destructive",
+          title: "Meow! Something's amiss. 🐾",
+          description: error.message + '. Please try again.',
+        })
       });
   }
 
@@ -82,25 +87,28 @@ function Home() {
   useEffect(() => {
     if (allBreeds === initialAppState.allBreeds) {
       fetchCatBreeds()
-      .then((data: Cat[]) => {
-        if (data.length) {
-          setAllBreeds(
-            data.map((cat: Cat) => ({ 
-              id: cat.id, 
-              name: cat.name,
-              description: cat.description,
-              origin: cat.origin,
-              temperament: cat.temperament,
-              value: cat.id,
-              label: cat.name,
-            })
-          ));
-        }
-      })
-      .catch(error => {
-        // Handle the error
-        console.error(error);
-      });
+        .then((data: Cat[]) => {
+          if (data.length) {
+            setAllBreeds(
+              data.map((cat: Cat) => ({ 
+                id: cat.id, 
+                name: cat.name,
+                description: cat.description,
+                origin: cat.origin,
+                temperament: cat.temperament,
+                value: cat.id,
+                label: cat.name,
+              })
+            ));
+          }
+        })
+        .catch(error => {
+          toast({
+            variant: "destructive",
+            title: "Meow! Something's amiss. 🐾",
+            description: error.message + '. Please try again.',
+          })
+        });
     }
   }, [allBreeds])
 

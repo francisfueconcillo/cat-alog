@@ -24,20 +24,19 @@ const fetchCatBreeds = async () => {
       const axiosError = error as AxiosError;
       if (axiosError.response) {
         // Server responded with an error status code
-        console.error('Server error:', axiosError.response.status);
-        console.error('Server response:', axiosError.response.data);
+        throw Error('Server error: ' + JSON.stringify(axiosError.response.data));
       } else if (axiosError.request) {
         // The request was made but no response was received
-        console.error('No response received:', axiosError.request);
+        throw Error('No response received:', axiosError.request);
       } else {
         // Something happened in setting up the request that triggered an error
-        console.error('Request error:', axiosError.message);
+        throw Error('Request error: ' + axiosError.message);
       }
     } else {
       // Non-Axios error
-      console.error('Non-Axios error:', error.message);
+      throw Error('Generic error: ' + error.message);
     }
-    throw error; // Rethrow the error or handle it accordingly
+
   }
 
 }
@@ -56,20 +55,20 @@ const searchImages = async(catId: string, page: number, pageLimit: number ) => {
       const axiosError = error as AxiosError;
       if (axiosError.response) {
         // Server responded with an error status code
-        console.error('Server error:', axiosError.response.status);
-        console.error('Server response:', axiosError.response.data);
+        throw Error('Server error: ' + JSON.stringify(axiosError.response.data));
       } else if (axiosError.request) {
         // The request was made but no response was received
-        console.error('No response received:', axiosError.request);
+        throw Error('No response received:', axiosError.request);
       } else {
         // Something happened in setting up the request that triggered an error
-        console.error('Request error:', axiosError.message);
+        throw Error('Request error: ' + axiosError.message);
       }
     } else {
       // Non-Axios error
       console.error('Non-Axios error:', error.message);
     }
-    throw error; // Rethrow the error or handle it accordingly
+    
+    throw Error('Generic error: ' + error.message);
   }
 
 

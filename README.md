@@ -19,6 +19,7 @@ This application provides information about different cat breeds, helping cat en
 - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### [@shacdn/ui](https://ui.shadcn.com) UI Components
+- UI Components are stored in from @shacdn/ui are stored in `src/components/ui`
 - Add UI components from [@shacdn/ui](https://ui.shadcn.com) by running `npx shadcn-ui@latest add <component name>` . See installation guide for each component in [@shacdn/ui documentation](https://ui.shadcn.com/docs)
 - Move the component *.tsx file to `src/components/ui` directory and fix any imports to point to this directory
 
