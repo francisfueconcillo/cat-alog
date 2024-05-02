@@ -12,6 +12,7 @@ This application provides information about different cat breeds, helping cat en
 - This project was bootstrapped with [Create React App](https://facebook.github.io/create-react-app), using React w/ Typescript
 - TailwindCSS for styling and grid layout 
 - [@shacdn/ui](https://ui.shadcn.com) for re-usable UI components
+- React Context API for state management
 
 ## Local Development Setup
 - Run `npm i`
