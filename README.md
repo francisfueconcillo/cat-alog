@@ -8,6 +8,15 @@ This application provides information about different cat breeds, helping cat en
 - Responsive Design: Enjoy a seamless experience across various devices, including desktops, tablets, and mobile phones.
 
 
+## Screenshots
+<img src="https://github.com/francisfueconcillo/cat-alog/blob/main/documentation/home.png?raw=true" alt="Home Page" style="width: 500px;">
+
+<img src="https://github.com/francisfueconcillo/cat-alog/blob/main/documentation/cat-details.png?raw=true" alt="Details Page" style="width: 500px;">
+
+<img src="https://github.com/francisfueconcillo/cat-alog/blob/main/documentation/home-mobile.png?raw=true" alt="Home Page (mobile)" style="width: 360px;">
+
+<img src="https://github.com/francisfueconcillo/cat-alog/blob/main/documentation/cat-details-mobile.png?raw=true" alt="Details Page (mobile)" style="width: 360px;">
+
 ## Tech Stack
 - This project was bootstrapped with [Create React App](https://facebook.github.io/create-react-app), using React w/ Typescript
 - TailwindCSS for styling and grid layout 
@@ -44,3 +53,4 @@ PAGE_LIMIT | Yes | The number of cat image to show per page load | 10
 - It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
 - Move this build package to your web server
 - See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
